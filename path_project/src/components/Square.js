@@ -1,6 +1,6 @@
 import react from 'react'
 
-const Square = ({row, col, size, color, isWall, click, isStart, isEnd, isPath}) => {
+const Square = ({row, col, size, color, isWall, click, isStart, isEnd, isPath, isExplored}) => {
 	const squareStyle = {
 		width: size,
 		height: size,
@@ -50,8 +50,18 @@ const Square = ({row, col, size, color, isWall, click, isStart, isEnd, isPath}) 
 		display: 'inline-block'
 	}
 
+	const exploreStyle = {
+		width: size,
+		height: size,
+		background: 'lightgrey',
+		outlineColor: 'darkblue',
+		outlineStyle: "solid",
+		outlineWidth: "1",
+		display: 'inline-block'
+	}
+
 	return (
-		<div style={isWall ? wallStyle : isStart? startStyle : isEnd? endStyle : isPath? pathStyle : squareStyle}
+		<div style={isWall ? wallStyle : isStart? startStyle : isEnd? endStyle : isPath? pathStyle : isExplored? exploreStyle : squareStyle}
 		 	onClick = {() => click(row, col)}></div>
 	);
 }
