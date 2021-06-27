@@ -1,11 +1,12 @@
 import react from 'react'
 
 const Square = ({row, col, size, color, isWall, click, isStart, isEnd, isPath, isExplored}) => {
+	const outlineColor = 'darkblue'
 	const squareStyle = {
 		width: size,
 		height: size,
 		background: color,
-		outlineColor: 'darkblue',
+		outlineColor: outlineColor,
 		outlineStyle: "solid",
 		outlineWidth: "1",
 		display: 'inline-block'
@@ -13,8 +14,8 @@ const Square = ({row, col, size, color, isWall, click, isStart, isEnd, isPath, i
 	const wallStyle = {
 		width: size,
 		height: size,
-		background: 'darkblue',
-		outlineColor: 'darkblue',
+		background: outlineColor,
+		outlineColor: outlineColor,
 		outlineStyle: "solid",
 		outlineWidth: "1",
 		display: 'inline-block'
@@ -24,7 +25,7 @@ const Square = ({row, col, size, color, isWall, click, isStart, isEnd, isPath, i
 		width: size,
 		height: size,
 		background: 'green',
-		outlineColor: 'darkblue',
+		outlineColor: outlineColor,
 		outlineStyle: "solid",
 		outlineWidth: "1",
 		display: 'inline-block'
@@ -34,7 +35,7 @@ const Square = ({row, col, size, color, isWall, click, isStart, isEnd, isPath, i
 		width: size,
 		height: size,
 		background: 'red',
-		outlineColor: 'darkblue',
+		outlineColor: outlineColor,
 		outlineStyle: "solid",
 		outlineWidth: "1",
 		display: 'inline-block'
@@ -43,8 +44,8 @@ const Square = ({row, col, size, color, isWall, click, isStart, isEnd, isPath, i
 	const pathStyle = {
 		width: size,
 		height: size,
-		background: 'lightblue',
-		outlineColor: 'darkblue',
+		background: 'blue',
+		outlineColor: outlineColor,
 		outlineStyle: "solid",
 		outlineWidth: "1",
 		display: 'inline-block'
@@ -54,7 +55,7 @@ const Square = ({row, col, size, color, isWall, click, isStart, isEnd, isPath, i
 		width: size,
 		height: size,
 		background: 'lightgrey',
-		outlineColor: 'darkblue',
+		outlineColor: outlineColor,
 		outlineStyle: "solid",
 		outlineWidth: "1",
 		display: 'inline-block'

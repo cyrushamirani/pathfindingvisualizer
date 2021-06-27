@@ -1,8 +1,8 @@
-const newGrid = (gridSize, sqSize) => {  
+const newGrid = (gridSize, gridHeight, sqSize) => {  
   const initialGrid = new Array(gridSize)
   for (var i = 0; i < gridSize; i++) initialGrid[i] = [];
   for (var i = 0; i < gridSize; i++){
-	for (var j = 0; j < gridSize; j++) {
+	for (var j = 0; j < gridHeight; j++) {
 		const newSquare = {size: sqSize, color: '#eaae59', isWall: false, isStart: false, isEnd: false, isPath: false, isExplored: false, row: i, col: j}
 		initialGrid[i] = initialGrid[i].concat(newSquare)
 	}
@@ -101,5 +101,43 @@ const getNewGridWithSquareSet = (grid, row, col) => {
 	  return newGrid
 }
 
+const getNewClearGrid = (grid) => {
+	const newGrid = grid.slice()
+	for (var i = 0; i < grid.length; i++) {
+		for (var j = 0; j < grid[0].length; j++) {
+			const oldSquare = grid[i][j]
+			if (!oldSquare.isStart && !oldSquare.isEnd) {
+				const newSquare = {
+					...oldSquare,
+					isPath: false,
+					isExplored: false,
+				}
+				newGrid[i][j] = newSquare
+			}
+		}
+	}
+	return newGrid
+}
+
+const getNewResetGrid = (grid) => {
+	const newGrid = grid.slice()
+	for (var i = 0; i < grid.length; i++) {
+		for (var j = 0; j < grid[0].length; j++) {
+			const oldSquare = grid[i][j]
+			const newSquare = {
+				...oldSquare,
+				isStart: false,
+				isWall: false,
+				isEnd: false,
+				isPath: false,
+				isExplored: false,
+			}
+			newGrid[i][j] = newSquare
+		}
+	}
+	return newGrid
+}
+
 export default {getNewGridWithEndToggled, getNewGridWithPathToggled, getNewGridWithStartToggled,
-	 getNewGridWithWallToggled, newGrid, getNewGridWithExploreToggled, getNewGridWithSquareSet}
+	 getNewGridWithWallToggled, newGrid, getNewGridWithExploreToggled, getNewGridWithSquareSet,
+	getNewClearGrid, getNewResetGrid}
