@@ -107,6 +107,9 @@ const bfs_path = (grid, start, end) => {
 /**
  * Helper function to retrieve valid neighbors of given square.
  * Used in DFS/BFS.
+ * @param {*} grid - The grid object the square is located in.
+ * @param {*} square - Array of x, y coordinates representing the square in the array.
+ * @param {*} seen - Array of squares already seen (in string representation).
  */
 
 const getNeighbors = (grid, square, seen) => {
