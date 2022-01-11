@@ -156,7 +156,6 @@ function App() {
 		</div>
 		<div>
 			<Button variant="primary" onClick = {buttonChooseClick}>Toggle</Button>{' '}
-
 			<Button variant={visualized === undefined ? "primary" : visualized !== 'bfs' ? "danger" : "success"}
 				 onClick = {() => bfs_explore_action(grid, start, end)}>bfs explore</Button>{' '}
 			<Button variant={visualized === undefined ? "primary" : visualized !== 'dfs' ? "danger" : "success"}

@@ -5,7 +5,7 @@ const Square = ({row, col, size, color, isWall, click, isStart, isEnd, isPath, i
 	const squareStyle = {
 		width: size,
 		height: size,
-		background: color,
+		background: color,l
 		outlineColor: outlineColor,
 		outlineStyle: "solid",
 		outlineWidth: "1",
